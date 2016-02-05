@@ -1,0 +1,129 @@
+article p a{
+    font-weight: bold;
+}
+
+article p{
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+/* アンケートの回答に関する部分 */
+
+strong{
+    color : #4b0082;
+}
+
+th, td{
+    padding: 4px;
+    text-align: center;
+}
+
+th{
+    border-bottom: 2px #000 solid;
+}
+
+img.pie-chart,
+img.bar-chart{
+    width: 100%;
+}
+
+img.bar-chart{
+    border: 1px #aaa solid;
+}
+
+div.Q1:after,
+div.clearfix:after{
+    content: ".";
+    display: block;
+    height: 0;
+    font-size:0;
+    clear: both;
+    visibility:hidden;
+}
+
+div.Q1_1,
+div.Q1_2{
+    width: 300px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.Q1_1 table,
+div.Q1_2 table{
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+figcaption{
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+figure{
+    margin-top: 10px;
+}
+
+@media (min-width : 641px){
+    div.Q1_1,
+    div.Q1_2{
+        width: 45%;
+    }
+
+    div.Q1_3 table,
+    div.Q4_1 table{
+        margin: 0 auto;
+        margin-top: 80px;
+    }
+
+    div.Q1_3,
+    div.Q4_1{
+        width: 100%;
+    }
+
+    div.Q1_3 img,
+    div.Q4_1 img{
+        width: 50%;
+        float: right;
+    }
+
+    div.Q2_1_1 table,
+    div.Q2_1_2 table,
+    div.Q2_2   table,
+    div.Q2_3   table,
+    div.Q3_1   table,
+    div.Q3_2   table,
+    div.Q3_3   table,
+    div.Q3_4   table,
+    div.Q4_1   table,
+    div.Q4_2   table,
+    div.Q4_3_1 table,
+    div.Q4_3_2 table,
+    div.Q4_3_3 table{
+        float: left;
+        margin-left: 10px;
+    }
+
+    figure.half{
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width : 641px){
+    div.Q1_3 table{
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+    div.Q1_3{
+        width: 300px;
+    }
+
+    div.Q1_3 img{
+        width: 100%;
+    }
+}
+

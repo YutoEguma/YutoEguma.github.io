@@ -1,0 +1,43 @@
+.agree_button,
+.disagree_button{
+	height : 60px;
+	width  : 40%;
+
+	font-weight : bold;
+	font-size   : 28px;
+	line-height : 40px;
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	box-shadow: 2px 2px 2px #aaa;
+}
+
+@media ( max-width : 640px ){
+	.agree_button,
+	.disagree_button{
+		font-size   : 20px;
+	}
+}
+
+.agree_button{
+	float : left;
+	margin-left: 6.66%;
+}
+
+.disagree_button{
+	float: left;
+	margin-left: 6.66%;
+}
+
+div.vote{
+	padding-top : 35px;
+	margin-top  : 35px;
+	padding-bottom: 35px;
+	margin-bottom: 35px;
+
+	border-top: 1px #aaa solid;
+	border-bottom: 1px #aaa solid;
+
+	text-align: center;
+}

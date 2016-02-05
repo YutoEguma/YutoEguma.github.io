@@ -1,0 +1,65 @@
+
+/*レイアウトに関する設定*/
+main{
+	width: 100%;
+	margin: 0 auto;
+
+	font-size: 12px;
+}
+
+article{
+	text-align: justify;
+}
+
+footer{
+	text-align: center;
+	height: 50px;
+	border-top: 1px solid #ccc;
+	width:100%;
+	background-color: #eee;
+	font-size: 10px;
+}
+
+/*能書き*/
+.boasting{
+	text-align: justify;
+	text-justify: inter-ideograph;
+	font-size: 14px;
+}
+
+/*ご協力いただいきたいこと*/
+.signing,
+.survey,
+.moves{
+	width:100%;
+	box-shadow:0 0 2px #000;
+	margin-top: 10px;
+}
+
+/*見出しの文字を小さくする*/
+h2{
+	font-size : 22px;
+}
+
+h3{
+	font-size : 18px;
+}
+
+/*ヘッダーの文字の大きさを変化させる*/
+.navbar-brand{
+	font-size: 16px;
+}
+
+/*一環なんちゃらかんちゃら*/
+.kakitakunai{
+	font-size: 8px;
+}
+
+/*修正版*/
+.survey2,
+.moves2{
+	width: 100%;
+	box-shadow:0 0 2px #000;
+	margin: 10px 0;
+}
+

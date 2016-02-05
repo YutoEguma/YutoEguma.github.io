@@ -1,0 +1,106 @@
+<?php
+
+/*必要ファイルの読み込み*/
+if( $_SERVER['SERVER_NAME'] == 'persephone.cl.ait.kyushu-u.ac.jp' || $_SERVER['SERVER_NAME'] == 'hades.cl.ait.kyushu-u.ac.jp' ){
+    require( $_SERVER['DOCUMENT_ROOT'] . '/../itoFilepath.php' );
+}else{
+    require( $_SERVER['DOCUMENT_ROOT'] . '/sf_ito/document_root/itoFilepath.php' ); 
+}
+
+/*セッションからクッキーを生成*/
+session_start();
+if( isset( $_SESSION['ITO_SUPER_ADDRESS'] ) )
+    setcookie( 'ITO_SUPER_ADDRESS', htmlspecialchars( $_SESSION['ITO_SUPER_ADDRESS'] ), time() + 365 * 24 * 60 * 60 );   #1年
+
+/*クッキーからセッションを生成*/
+if( isset( $_COOKIE['ITO_SUPER_ADDRESS'] ) )
+    $_SESSION['ITO_SUPER_ADDRESS'] = htmlspecialchars( $_COOKIE['ITO_SUPER_ADDRESS'] );
+
+ini_set( 'display_errors', 1 );
+
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>おわりに</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 自作のcss -->
+    <link href="../css/style.css"     rel="stylesheet" media="screen" >
+    <link href="../css/style_pc.css"  rel="stylesheet" media="screen and (min-width: 641px)" >
+    <link href="../css/style_smp.css" rel="stylesheet" media="screen and (max-width: 640px)" >
+    <link href="../css/top_pc.css"  rel="stylesheet" media="screen and (min-width: 641px)" >
+    <link href="../css/top_smp.css" rel="stylesheet" media="screen and (max-width: 640px)" >
+    <link href="css/style.css"     rel="stylesheet" media="screen" >
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="js/Chart.js"></script>
+
+    <!-- googleanalytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66798994-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <!-- ナビゲーションバーの設定 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- ヘッダ情報 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../">伊都周辺へのスーパー誘致に関する調査</a>
+            </div>
+            <!-- リストの配置 -->
+            <ul class="nav navbar-nav">
+                <?php printNavigation( 'result' ); ?>
+                </ul>
+        </div>
+    </nav>
+    <main class="container" role="main">
+        <article>
+        <h1>おわりに</h1>
+        <p>
+            　本活動による集計・解析結果から、
+            伊都キャンパス周辺には、
+        </p>
+        <ul>
+            <li>自転車や原動機付自転車を置くことのできる駐輪場が大きい</li>
+            <li>伊都キャンパス正面入り口から、太郎丸交差点までの県道567号線沿いにある</li>
+            <li>生鮮食品を多く取り扱う</li>
+        </ul>
+        <p>
+            という条件を満たしたスーパーマーケットの需要が高まっており、
+            必要であると言えます。
+        </p>
+        <p>
+            　九州大学ならびに伊都キャンパス周辺のさらなる発展のために、
+            スーパーマーケットの経営者や企業のみなさまには、
+            スーパーマーケットの出店を御検討していただきたいと思います。
+            よろしくお願いいたします。
+        </p>
+        <a href="./consider.php">⇦もどる</a><br><br><a href="../">トップページへ</a>
+        </article>
+    </main>
+    <footer>
+        copyright (C) Yuto Eguma. All rights reserved.
+    </footer>
+</body>
+</html>

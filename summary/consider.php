@@ -1,0 +1,271 @@
+<?php
+
+/*必要ファイルの読み込み*/
+if( $_SERVER['SERVER_NAME'] == 'persephone.cl.ait.kyushu-u.ac.jp' || $_SERVER['SERVER_NAME'] == 'hades.cl.ait.kyushu-u.ac.jp' ){
+    require( $_SERVER['DOCUMENT_ROOT'] . '/../itoFilepath.php' );
+}else{
+    require( $_SERVER['DOCUMENT_ROOT'] . '/sf_ito/document_root/itoFilepath.php' ); 
+}
+
+/*セッションからクッキーを生成*/
+session_start();
+if( isset( $_SESSION['ITO_SUPER_ADDRESS'] ) )
+    setcookie( 'ITO_SUPER_ADDRESS', htmlspecialchars( $_SESSION['ITO_SUPER_ADDRESS'] ), time() + 365 * 24 * 60 * 60 );   #1年
+
+/*クッキーからセッションを生成*/
+if( isset( $_COOKIE['ITO_SUPER_ADDRESS'] ) )
+    $_SESSION['ITO_SUPER_ADDRESS'] = htmlspecialchars( $_COOKIE['ITO_SUPER_ADDRESS'] );
+
+ini_set( 'display_errors', 1 );
+
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>集計・解析結果の考察</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 自作のcss -->
+    <link href="../css/style.css"     rel="stylesheet" media="screen" >
+    <link href="../css/style_pc.css"  rel="stylesheet" media="screen and (min-width: 641px)" >
+    <link href="../css/style_smp.css" rel="stylesheet" media="screen and (max-width: 640px)" >
+    <link href="../css/top_pc.css"  rel="stylesheet" media="screen and (min-width: 641px)" >
+    <link href="../css/top_smp.css" rel="stylesheet" media="screen and (max-width: 640px)" >
+    <link href="css/style.css"     rel="stylesheet" media="screen" >
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="js/Chart.js"></script>
+
+    <!-- googleanalytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66798994-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <!-- ナビゲーションバーの設定 -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- ヘッダ情報 -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../">伊都周辺へのスーパー誘致に関する調査</a>
+            </div>
+            <!-- リストの配置 -->
+            <ul class="nav navbar-nav">
+                <?php printNavigation( 'result' ); ?>
+                </ul>
+        </div>
+    </nav>
+    <main class="container" role="main">
+        <article>
+        <h1>集計・解析結果の考察</h1>
+
+        <h2 id="s1">反対意見について</h2>
+        <p>
+            　投票の結果、
+            173人の参加者が「賛成」としましたが、
+            3人が「反対」に投じているのも事実です。<br>
+            　反対の意見としては「誘致しても採算が取れる見込みが低いのではないか」というものでした。
+            現在伊都キャンパス周辺の住宅には、
+            1人暮らしの学生を対象とした物件が多く、
+            そのため、
+            伊都キャンパス周辺では比較的単価の高い主婦層の来客が見込めず、
+            結果としてすぐに撤退となってしまうのではないかと考えた上で、
+            「反対」に投じたという意見でした。<br>
+            　やはり、
+            スーパーマーケットを誘致するとなれば、
+            スーパーマーケットの経営が成り立つのかを考えなくてはなりません。
+            結果から言えば後述の<a href="#s2">アンケートの結果からの考察</a>の、
+            <a href="#a">どれだけの集客が見込めるのか</a>にて、
+            十分な集客が見込めることがわかりました。
+            そのため、
+            撤退することはないだろうと結論付けています。
+        </p>
+
+        <h2 id="s2">スーパーマーケットがないことによる苦労</h2>
+        <p>
+            　本活動では、
+            参加者からアンケートとは別に、
+            50もの本活動に関する意見をいただきました。
+            その多くは、
+            スーパーマーケットがないために不満がある、
+            苦労しているという内容のものでした。
+            その一部を紹介します。
+            以下、
+            ”「」”で囲まれた部分は実際にいただいた意見です。<br>
+            　やはり、
+            一番多い意見は「スーパーマーケットが遠い」でした。
+            しかし、「生鮮食品は買いだめできない」ため、
+            「冷蔵庫が空になりがち」「買い物にかなり時間を割いている」「雨の日は買い物ができない」「雨の日はバスを使うので交通費がかさむ」という問題に直面しています。
+            また、
+            これらが理由となり「自炊するのがつらい」「食事が億劫」と考える人もおり、
+            食や健康に対する意識の低下が懸念されます。
+            実際に、
+            「食料入手が困難で、倒れそうになった」という人もいます。
+        </p>
+
+        <h2 id="s3">スーパーマーケット誘致に関する考察</h2>
+        <p>
+            　アンケートでは、「競合店」「客層」「どれだけの集客が見込めるのか」「もし、スーパーマーケットができるなら」の4項目を調査するように作成しています。
+            これらに焦点を当て、
+            考察していきます。
+        </p>
+        <h3>競合店</h3>
+        <p>
+            　学外の店舗としては、
+            「イオンモール福岡 伊都店」と「マックスバリュ 周船寺店」が多いことがわかります。
+            また、
+            学内でも、
+            「学内のローソン」や、「九大生協」がよく利用されていることがわかります。<br>
+            　しかし、
+            地域別の食材の購入場所から、
+            住んでいる地域でも最も近いスーパーマーケットを利用することが結果としてわかりました。
+            「九大学研都市」に住む人々は、
+            「イオンモール 九大学研都市店」をよく利用し、
+            「周船寺」や「富士見」に住む人々は、
+            「マックスバリュ 周船寺店」をよく利用しています。
+            このことから、
+            <strong>伊都キャンパス周辺にスーパーマーケットができれば、
+            上記の店舗を利用する人々の一部はそのスーパーマーケットを利用するようになる</strong>ことが予想されます。
+        </p>
+        <div class="Q2_1_1 clearfix">
+            <figure>
+                <img src="survey/Q2_1_1.png" class="bar-chart" />
+                <figcaption>食材の購入場所</figcaption>
+            </figure>
+            <figure>
+                <img src="survey/Q2_1_1_place.png" class="bar-chart" />
+                <figcaption>地域別食材の購入場所</figcaption>
+            </figure>
+        </div>
+
+        <h3>客層</h3>
+        <p>
+            　アンケートの回答は、
+            <strong>約9割が学生によるものであり、
+            約3分の2以上が男性</strong>によるものでした。
+            新しくスーパーマーケットができた場合の客層もこのようになると考えられます。<br>
+            　また、
+            伊都キャンパス周辺にアクセスする際の交通手段を集計した結果、
+            「自転車」と「昭和バス」が多いことがわかっています。
+            そのため、
+            <strong>新しくできたスーパーマーケットの利用者の多くは自転車で訪れることが多いと予想できます。</strong>
+            そのため、駐輪場は大きなものがよいと考えられます。
+        </p>
+        <div class="Q3_1">
+            <figure>
+                <img src="survey/Q3_1.png" class="bar-chart" />
+                <figcaption>伊都キャンパス周辺にアクセスする際の交通手段</figcaption>
+            </figure>
+        </div>
+
+        <h3 id="a">どれだけの集客が見込めるか</h3>
+        <p>
+            　買い物の頻度を集計したところ、
+            回答者は平均で週に2.76回利用することがわかりました。
+            また、
+            福岡市西区の「太郎丸」「元岡」「桑原」「九大新町」には平成26年12月時点で722世帯が、
+            糸島市「泊」には512世帯が暮らしていると発表されています。
+            これらの人々が週に2.76回新しいスーパーマーケットを利用する場合、
+            1日の利用者数は486人となります。<br>
+            　さらに、
+            伊都キャンパスには平成31年に約18000人の学生と約3000人の教員が関わることになります。
+            伊都キャンパスにアクセスする頻度から、
+            回答者は平均で週に4.93回アクセスしていることがわかりました。
+            つまり、
+            1日の伊都キャンパスのアクセス者数は、
+            14790人となります。
+            この人々も平均で週に2.76回スーパーマーケットを利用するとすると、
+            伊都キャンパスにアクセスする際に利用される県道567号線には、
+            1日に5831人もの買い物をしようと考えている人々が通ることになります。
+            このうち3人に1人でも利用すれば、
+            1943人が利用することになります。<br>
+            　よって、
+            <strong>新しくできたスーパーマーケットの利用者数は2429人</strong>と推定できます。
+            この人数は、
+            <a href="http://www.super.or.jp/">新日本スーパーマーケット協会</a>が公開している平成26年度の<a href="http://www.super.or.jp/wp-content/uploads/2013/11/H26nenji-tokei.pdf">スーパーマーケット年次統計調査報告書</a>で示されている、
+            1日の平均の来客者数「平日に1883.4人、土日に2345.6人」という数字を上回っています。
+            このことから、
+            伊都キャンパス周辺では十分な集客が見込めるといえます。
+        </p>
+        <div class="clearfix">
+            <figure class="half">
+                <img src="survey/Q2_2.png" class="bar-chart" style="border:none;" />
+                <figcaption>買い物の頻度</figcaption>
+            </figure>
+            <figure class="half">
+                <img src="survey/Q3_2.png" class="bar-chart" style="border:none; width: 96%;" />
+                <figcaption>伊都キャンパスにアクセスする頻度</figcaption>
+            </figure>
+        </div>
+
+        <h3>もし、スーパーマーケットができるなら</h3>
+        <p>
+            　新しくスーパーマーケットができた場合、何を買いたいかを集計した結果、
+            野菜や果物、肉類などの生鮮食品や、
+            比較的消費のはやい飲み物が買いたいものとして多いことがわかりました。
+            日用品よりも、食材が求められています。
+            また、
+            食材の中でも、
+            <strong>生鮮食品のような賞味期限、消費期限の短い食品が、
+            冷凍食品のような保存できる食品よりも求められている</strong>ことがわかります。<br>
+            　現在の伊都キャンパス周辺では、
+            生鮮食品はコンビニエンスストアに多少置いてある程度なので、
+            品揃えが悪く、
+            目的の食品を購入するのは難しい状態です。
+            そのため、
+            <strong style="color:red;">生鮮食品を買うことができる施設が、
+            現在の伊都キャンパス周辺には必要</strong>です。<br>
+            　また、
+            どこにあるとよいかについて集計したところ、
+            キャンパス内よりもキャンパス外にあるとよいという結果となりました。
+            その他の意見としては、
+            「ナフコ 元岡店の横」「徒歩圏内」などの意見があり、
+            求められている場所としては、
+            伊都キャンパスから徒歩圏内であるとわかります。
+            具体的な徒歩圏内とは、
+            動線データの解析結果から、
+            <strong>県道567号線沿いの伊都キャンパス正面入り口から太郎丸交差点まで</strong>とわかりました。
+        </p>
+        <p>
+            　このほかに「その他の要望」として、
+            「安い」「夜遅くまで営業している」「銀行が併設する」というような店舗が求められていることも、
+            アンケートの集計結果からわかりました。
+        </p>
+        <div class="Q4_3_1">
+            <figure>
+                <img src="survey/Q4_3_1.png" class="bar-chart" />
+                <figcaption>何を買いたいか</figcaption>
+            </figure>
+            <figure>
+                <img src="survey/Q4_2.png" class="bar-chart" />
+                <figcaption>どこにあるとよいか</figcaption>
+            </figure>
+        </div>
+
+        <a href="./survey.php">⇦もどる</a>　<a href="./conclution.php">すすむ⇨</a><br><br><a href="../">トップページへ</a>
+        </article>
+    </main>
+    <footer>
+        copyright (C) Yuto Eguma. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+/*レイアウトに関する設定*/
+main{
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+
+	font-size: 14px;
+}
+
+footer{
+	clear: both;
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	border-top: 1px solid #ccc;
+}
+
+/*能書き*/
+.boasting{
+	text-align:justify;
+	text-justify: inter-ideograph;
+	font-size: 18px;
+}
+
+/*ご協力いただきたいこと*/
+.signing{
+	width:32%;
+	float:left;
+	box-shadow:0 0 2px #000;
+}
+
+.survey,
+.moves{
+	width:32%;
+	float:left;
+	margin-left: 2%;
+	box-shadow:0 0 2px #000;
+}
+
+/*結果や調べたことなど*/
+.agree_num{
+	float:left;
+	width: 32%;
+}
+
+/*修正版*/
+.survey2{
+	width: 49%;
+	box-shadow:0 0 2px #000;
+	float:left;
+}
+
+.moves2{
+	width: 49%;
+	box-shadow:0 0 2px #000;
+	float: right;
+}
+

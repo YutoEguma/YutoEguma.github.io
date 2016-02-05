@@ -1,0 +1,27 @@
+
+main{
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+article{
+	float: left;
+	width: 500px;
+
+}
+
+aside[id="sidebar"]{
+	float: right;
+	width: 200px;
+}
+
+footer{
+	clear: both;
+	text-align: center;
+	height: 80px;
+	line-height: 80px;
+	border-top: 1px solid #ccc;
+	clear: both;
+}
+

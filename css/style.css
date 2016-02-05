@@ -1,0 +1,63 @@
+/*全共通のcss*/
+.top_image{
+	width:100%;
+}
+
+.kakitakunai{
+	font-size: 10px;
+}
+
+div.vote_result{
+    margin-top: 24px;
+    padding-top: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+
+    border-top: 1px #aaa solid;
+    border-bottom: 1px #aaa solid;
+}
+
+div.vote_result p strong{
+    font-size: 120%;
+}
+
+div.agree,
+div.disagree{
+    display: block;
+    width: 49%;
+    float: left;
+    text-align: center;
+}
+
+div.agree{
+    color: #3676e0;
+}
+
+div.disagree{
+    color: #da163e;
+}
+
+div.vote_result:after{
+    content: ".";
+    display: block;
+    height: 0;
+    font-size:0;
+    clear: both;
+    visibility:hidden;
+}
+
+div.vote_result p.end{
+    width: 100%;
+    display: block;
+    text-align: right;
+    float: left;
+}
+
+nav.reserch_result:after{
+    content: ".";
+    display: block;
+    height: 0;
+    font-size:0;
+    clear: both;
+    visibility:hidden;
+}
